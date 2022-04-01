@@ -34,3 +34,9 @@ Wen you first open the app, message will be shown to add images. You can use the
 
 When you done with capturing images, rearrengement and applying filter, you can click on the done button given at the top right corner to generate the pdf. It will try to open the default pdf app after the pdf generated. 
 
+# Build Specification
+ - Operating system: Ubuntu 20.04
+ - Flutter 2.10.4
+ 
+
+
