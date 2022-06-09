@@ -139,12 +139,13 @@ class Quail extends StatelessWidget {
                 ],
               ),
               body: SizedBox(
-                height: Get.height,
-                width: Get.width,
-                child: controller.images.isEmpty
-                    ? Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: const [
+                  height: Get.height,
+                  width: Get.width,
+                  child: () {
+                    if (controller.images.isEmpty) {
+                      return Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: const [
                             Padding(
                               padding: EdgeInsets.all(8.0),
                               child: Text(
@@ -163,8 +164,9 @@ class Quail extends StatelessWidget {
                                 textAlign: TextAlign.center,
                               ),
                             )
-                          ])
-                    : Column(
+                          ]);
+                    } else {
+                      return Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Row(
@@ -262,8 +264,9 @@ class Quail extends StatelessWidget {
                             ],
                           ),
                         ],
-                      ),
-              ),
+                      );
+                    }
+                  }()),
             );
           }),
     );
